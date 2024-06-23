@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Repository;
 
@@ -15,6 +16,14 @@ public class RunRepository {
 
     private List<Run> runs = new ArrayList<>();
 
+    // returns a specific run object identified by id (optional container object, returns isPresent bool)
+    Optional<Run> findById(int id) {
+        return runs.stream()
+            .filter(run -> run.id() == id) // CONDITION
+            .findFirst();
+    }
+
+    // returns all run objects
     List<Run> findAll() {
         return runs;
     }
