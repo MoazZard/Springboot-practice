@@ -11,8 +11,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.PostMapping;
+
 
 
 
@@ -26,9 +30,6 @@ public class RunController {
     /* map method to an endpoint (when someone accesses the endpoint, this method is executed)
     controller should take in request and return a response, nothing else
     */
-    String home() {
-        return "Hello, Runners!";
-    }
 
     private RunRepository runRepository;
 
@@ -55,13 +56,17 @@ public class RunController {
         return run.get();
     }
 
-    //post
-
-
+    //post (create) Run will be coming to us from the REQUEST body in a restAPI architecture also returned response gives HttpStatus CREATED
+    @ResponseStatus(HttpStatus.CREATED) 
+    @PostMapping("") 
+    void create(@RequestBody Run run) { 
+        runRepository.create(run);  
+    }
+ 
     //put
 
 
     //delete
 
-    
+
 }

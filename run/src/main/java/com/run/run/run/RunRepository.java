@@ -28,6 +28,15 @@ public class RunRepository {
         return runs;
     }
 
+    // --- Post (Create) ---
+
+    void create(Run run) {
+        runs.add(run);  
+    }
+
+    
+
+
     @PostConstruct // method only happens after dependency injection
     private void init () {
         runs.add(new Run(1, "First RUNNING", LocalDateTime.now(), LocalDateTime.now().plus(1, ChronoUnit.HOURS), 5, Location.OUTDOOR));
