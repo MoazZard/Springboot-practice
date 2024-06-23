@@ -56,6 +56,7 @@ public class RunController {
         return run.get();
     }
 
+
     //post (create) Run will be coming to us from the REQUEST body in a restAPI architecture also returned response gives HttpStatus CREATED
     @ResponseStatus(HttpStatus.CREATED) 
     @PostMapping("") 
@@ -63,8 +64,12 @@ public class RunController {
         runRepository.create(run);  
     }
  
-    //put
 
+    //put (update)
+    @PutMapping("/{id}")
+    void update(@RequestBody Run run, @PathVariable int id) {
+        runRepository.update(run,id);
+    }
 
     //delete
 

@@ -34,7 +34,20 @@ public class RunRepository {
         runs.add(run);  
     }
 
-    
+    // --- Put (update) ---
+    void update(Run run, int id) {
+        Optional<Run> existingRun = findById(id);
+
+        if (existingRun.isPresent()) {
+            runs.set(runs.indexOf(existingRun.get()), run);
+        }
+
+    }
+
+    // --- Delete ---
+    void delete(int id) {
+        runs.removeIf(run -> run.id().equals(id));
+    }
 
 
     @PostConstruct // method only happens after dependency injection
