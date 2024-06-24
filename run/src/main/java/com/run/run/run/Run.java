@@ -10,3 +10,5 @@ public record Run(
     Integer miles,
     Location location
 ) {}
+
+// DONT FORGET TO ADD VALIDATION DEPENDENCIES FOR NEW CONSTRAINTS e.g. @Positive or @Valid
