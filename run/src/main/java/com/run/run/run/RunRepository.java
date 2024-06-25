@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import jakarta.annotation.PostConstruct;
 
-// spring controls the instance with this annotation
+// NOTE: spring controls the instance with this annotation (detects beans) so putting it in param makes bean e.g in RunController
 @Repository
 public class RunRepository {
 
