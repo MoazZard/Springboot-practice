@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import jakarta.annotation.PostConstruct;
 
 // NOTE: spring controls the instance with this annotation (detects beans) so putting it in param makes bean e.g in RunController
+// NOTE: this is the model aspect of the MVC architecture. it communicates with the database
 @Repository
 public class RunRepository {
 
