@@ -16,11 +16,18 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
+/*
+ * Types of requests
+ * 
+ * Create : POST
+ * Read : GET
+ * Update : PUT
+ * Delete : DELETE
+ */ 
 
 
 
-
- // ANNOTATION & simplifies API calls e.g all mapping starts with /api/runs already
+ // ANNOTATION & simplifies API calls e.g all mapping starts with /api/runs already (Naming convention is called REST)
 @RestController
 @RequestMapping("/api/runs")
 public class RunController {
